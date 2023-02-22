@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:hortifruti/src/autenticacao/components/customizar_texto_campo.dart';
+import 'package:hortifruti/src/autenticacao/tela_cadastro.dart';
 import 'package:hortifruti/src/config/cor_customizada.dart';
 
 class TelaLogin extends StatelessWidget {
@@ -174,6 +175,7 @@ class TelaLogin extends StatelessWidget {
                 ///  side: const BorderSide => customizar a borda
                 /// SizedBox => posibilita customizar largura e altura do botão #fica a dica!!
                 ///  shape: RoundedRectangleBorder => bordas arredondadas
+                ///  Navigator.push() => O Navigator é um widget do Flutter que permite a navegação entre diferentes telas (rotas)
                 SizedBox(
                   height: 50,
                   child: OutlinedButton(
@@ -186,7 +188,13 @@ class TelaLogin extends StatelessWidget {
                         color: Colors.white,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(builder: (c){
+                          return TelaCadastro();
+                        }),
+                      );
+                    },
                     child: const Text(
                       "Criar conta",
                       style: TextStyle(

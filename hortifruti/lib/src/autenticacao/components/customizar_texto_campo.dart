@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 //Text Form Field
 class CustomizarTextoCampo extends StatefulWidget {
   final IconData icon;
   final String label;
   final bool esconderSenha;
+  //referente ao MaskTextInputFormatter vide tela de cadastro
+  final List<TextInputFormatter>? FormatarCampo;
 
   const CustomizarTextoCampo({
     super.key,
     required this.icon,
     required this.label,
     this.esconderSenha = false,
+    this.FormatarCampo,
   });
 
   @override
@@ -32,6 +36,7 @@ class _CustomizarTextoCampoState extends State<CustomizarTextoCampo> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
       child: TextFormField(
+        inputFormatters: widget.FormatarCampo,
         obscureText: esconder, //deixa a senha oculta
         decoration: InputDecoration(
           prefixIcon: Icon(widget.icon),
