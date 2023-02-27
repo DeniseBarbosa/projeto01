@@ -2,6 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:hortifruti/src/autenticacao/components/customizar_texto_campo.dart';
 import 'package:hortifruti/src/autenticacao/tela_cadastro.dart';
+import 'package:hortifruti/src/base/tela_base.dart';
 import 'package:hortifruti/src/config/cor_customizada.dart';
 
 class TelaLogin extends StatelessWidget {
@@ -116,7 +117,14 @@ class TelaLogin extends StatelessWidget {
                         borderRadius: BorderRadius.circular(18),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      //veja as informações sobre pushReplacement no arquivo .txt
+                      //rota que faz referencia a pagina Tabela Base
+                      Navigator.of(context)
+                          .pushReplacement(MaterialPageRoute(builder: (c) {
+                        return TelaBase();
+                      }));
+                    },
                     child: const Text(
                       "Entrar",
                       style: TextStyle(
@@ -190,7 +198,7 @@ class TelaLogin extends StatelessWidget {
                     ),
                     onPressed: () {
                       Navigator.of(context).push(
-                        MaterialPageRoute(builder: (c){
+                        MaterialPageRoute(builder: (c) {
                           return TelaCadastro();
                         }),
                       );

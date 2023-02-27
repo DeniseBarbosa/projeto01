@@ -1,0 +1,6 @@
+pushReplacement => O método pushReplacement no Flutter é usado para empilhar uma nova rota 
+na pilha de navegação e substituir a rota atual pela nova rota. Ele é útil para casos em que você
+deseja substituir completamente a tela atual por uma nova tela
+e não deseja que o usuário volte para a tela anterior pressionando o botão Voltar.
+Um exemplo comum é a tela de login, onde, após o usuário efetuar login com sucesso, 
+a tela de login é substituída pela tela principal do aplicativo.
