@@ -1,8 +1,8 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:hortifruti/src/autenticacao/components/customizar_texto_campo.dart';
-import 'package:hortifruti/src/autenticacao/tela_cadastro.dart';
-import 'package:hortifruti/src/base/tela_base.dart';
+import 'package:hortifruti/src/pages/autenticacao/components/customizar_texto_campo.dart';
+import 'package:hortifruti/src/pages/autenticacao/tela_cadastro.dart';
+import 'package:hortifruti/src/pages/base/tela_base.dart';
 import 'package:hortifruti/src/config/cor_customizada.dart';
 
 class TelaLogin extends StatelessWidget {

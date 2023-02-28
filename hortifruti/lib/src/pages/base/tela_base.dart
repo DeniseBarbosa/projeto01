@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hortifruti/src/config/cor_customizada.dart';
+import 'package:hortifruti/src/pages/home/home.dart';
 
 class TelaBase extends StatefulWidget {
   TelaBase({super.key});
@@ -28,9 +29,8 @@ class _TelaBaseState extends State<TelaBase> {
         physics: NeverScrollableScrollPhysics(),
         controller: MudarTela,
         children: [
-          Container(
-            color: Colors.blue,
-          ),
+          //pagina home
+          Home(),
           Container(
             color: Colors.pink,
           ),

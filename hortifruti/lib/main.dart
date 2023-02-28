@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'src/autenticacao/tela_login.dart';
+import 'src/pages/autenticacao/tela_login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,6 +17,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.green,
+        // todas as scaffold vai receber essa cor
+        scaffoldBackgroundColor:
+            Color.fromARGB(255, 241, 221, 191).withAlpha(190),
       ),
       home: const TelaLogin(),
     );
