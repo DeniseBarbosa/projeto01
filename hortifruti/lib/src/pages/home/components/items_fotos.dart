@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:hortifruti/src/config/cor_customizada.dart';
 import 'package:hortifruti/src/models/item.dart';
+import 'package:hortifruti/src/pages/produtos/tela_produtos.dart';
 import 'package:hortifruti/src/services/servicos_util.dart';
 
 class CarFotos extends StatelessWidget {
@@ -21,55 +22,73 @@ class CarFotos extends StatelessWidget {
     //O stack será usado para colocar um botão superior direito no card
     return Stack(
       children: [
-        Card(
-          //sombriamento nas bordas
-          elevation: 3,
-          shadowColor: Colors.orange.shade300,
-          //bordas circundadas
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(
-              20,
+        //clicado para detalhes do produto arquivo tela_produtos
+        GestureDetector(
+          //ao clicar na foto card ou em qualquer lugar que ñ seja o carrinho
+          //..continua será direcionado para o detalhes do produto arquivo tela_produtos
+          onTap: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (c) {
+              //tambem faz parte da chama de imagem detalhes produtos cod36
+              return TelaProdutos(
+                item: item,
+              );
+            }));
+          },
+          //conteudo
+          child: Card(
+            //sombriamento nas bordas
+            elevation: 3,
+            shadowColor: Colors.orange.shade300,
+            //bordas circundadas
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(
+                20,
+              ),
             ),
-          ),
-          child: Padding(
-            //da um espaçamento das imgs em outras palavras deixam elas mais pequenas
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              //texto será enviado para a esquerda do card
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                //imagens
-                //vai reorganizar os textos e imgs
-                Expanded(
-                  child: Image.asset(item.imagem),
-                ),
-                //Nome
-                Text(
-                  item.nomeItem,
-                  //textos maiores e em negritos
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-
-                //Preço - quantidade
-                //o row foi usado para colocar a unidade de medida do lado do texto no caso o numero
-                //..continua ñ foi aplicado
-                Row(
-                  children: [
-                    Text(
-                      //R$
-                      servicosUteis.precoMoeda(item.preco),
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: CoresCustomizada.CorCustomizadaContraste,
-                      ),
+            child: Padding(
+              //da um espaçamento das imgs em outras palavras deixam elas mais pequenas
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                //texto será enviado para a esquerda do card
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  //imagens
+                  //vai reorganizar os textos e imgs
+                  Expanded(
+                    // Hero e Tag => usado para animação de imgs
+                    child: Hero(
+                      tag: item.imagem,
+                      child: Image.asset(item.imagem),
                     ),
-                  ],
-                ),
-              ],
+                  ),
+                  //Nome
+                  Text(
+                    item.nomeItem,
+                    //textos maiores e em negritos
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  //Preço - quantidade
+                  //o row foi usado para colocar a unidade de medida do lado do texto no caso o numero
+                  //..continua ñ foi aplicado
+                  Row(
+                    children: [
+                      Text(
+                        //R$
+                        servicosUteis.precoMoeda(item.preco),
+                        style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: CoresCustomizada.CorCustomizadaContraste,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
