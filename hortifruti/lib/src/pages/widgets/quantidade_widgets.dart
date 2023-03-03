@@ -5,11 +5,15 @@ class QuantidadeWidget extends StatelessWidget {
   final int valor;
   final String textosufixo;
   final Function(int quantidade) resultado;
+  //refe-se ao icone de lixeira remoção
+  final bool eRemovivel;
   const QuantidadeWidget({
     super.key,
     required this.textosufixo,
     required this.valor,
     required this.resultado,
+    //refe-se ao icone de lixeira remoção
+    this.eRemovivel = false,
   });
 
   @override
@@ -28,13 +32,19 @@ class QuantidadeWidget extends StatelessWidget {
         ],
       ),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
         children: [
           //InkWell e Ink animação ao clicar no botão
           _BotaoQuantidade(
-            icon: Icons.remove,
-            cor: Colors.grey,
+            //faz parte da config do botão de remover
+            //caso n tiver um botão removivel ou o valor for maior que um apresentamos um icone remover, caso contrario outro botão!@#
+            icon:
+                !eRemovivel || valor > 1 ? Icons.remove : Icons.delete_forever,
+            //se o botão n for removivel ou a quantidade maior do que 1 retorne cinza caso contrario retorne vermelho
+            cor: !eRemovivel || valor > 1 ? Colors.grey : Colors.red,
             onPressed: () {
-              if (valor == 1) return; 
+              //faz parte da config do botão de remoção  && !eRemovivel => retorna 0 caso clicar para menos q 1
+              if (valor == 1 && !eRemovivel) return;
               int somaResultado = valor - 1;
               resultado(somaResultado);
             },

@@ -95,7 +95,7 @@ class _TelaProdutosState extends State<TelaProdutos> {
                               ),
                             ),
                           ),
-                          QuantidadeWidget(
+                            QuantidadeWidget(
                             //refere-se ao aquivo quantidade_widgets
                             textosufixo: widget.item.quantidade,
                             valor: cardItemQuantidade,

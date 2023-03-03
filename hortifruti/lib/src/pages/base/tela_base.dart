@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hortifruti/src/carrinho/pagina_carrinho.dart';
 import 'package:hortifruti/src/config/cor_customizada.dart';
 import 'package:hortifruti/src/pages/home/home.dart';
 
@@ -31,9 +32,7 @@ class _TelaBaseState extends State<TelaBase> {
         children: [
           //pagina home
           Home(),
-          Container(
-            color: Colors.pink,
-          ),
+               Carrinho(),
           Container(
             color: Colors.purple,
           ),
