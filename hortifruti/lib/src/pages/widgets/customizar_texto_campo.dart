@@ -8,13 +8,19 @@ class CustomizarTextoCampo extends StatefulWidget {
   final bool esconderSenha;
   //referente ao MaskTextInputFormatter vide tela de cadastro
   final List<TextInputFormatter>? FormatarCampo;
+  //refere-se a pagina de perfil
+  final String? valorInicial;
+  //apenas leitura para o usuario não pode editar
+  final bool apenasLeitura;
 
   const CustomizarTextoCampo({
     super.key,
     required this.icon,
     required this.label,
     this.esconderSenha = false,
+    this.valorInicial,
     this.FormatarCampo,
+    this.apenasLeitura = false,
   });
 
   @override
@@ -36,6 +42,10 @@ class _CustomizarTextoCampoState extends State<CustomizarTextoCampo> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15),
       child: TextFormField(
+        //campo apenas de leitura não  pode ser editado
+        readOnly: widget.apenasLeitura,
+        //referente a pagina de perfil
+        initialValue: widget.valorInicial,
         inputFormatters: widget.FormatarCampo,
         obscureText: esconder, //deixa a senha oculta
         decoration: InputDecoration(

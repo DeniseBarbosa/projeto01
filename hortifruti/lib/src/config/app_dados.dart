@@ -1,5 +1,6 @@
 import 'package:hortifruti/src/models/carrinho_lista.dart';
 import 'package:hortifruti/src/models/item.dart';
+import 'package:hortifruti/src/models/usuario.dart';
 
 //pertence a seção imagens
 
@@ -85,3 +86,14 @@ List<CarrinhoItem> carrinhoItem = [
     quantidade: 6,
   ),
 ];
+
+//aqui é ferente a pagina de usuarios 
+// e referente ao arquivo class usuario.dart
+UsuarioModel usuario = UsuarioModel(
+  celular: "11946793595" ,
+  email: "deniseluvoir@mail.com" ,
+  cpf: "004.294.702 -23",
+  nome: "Denise",
+  senha: "",
+  
+);

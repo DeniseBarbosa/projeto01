@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hortifruti/src/carrinho/pagina_carrinho.dart';
 import 'package:hortifruti/src/config/cor_customizada.dart';
 import 'package:hortifruti/src/pages/home/home.dart';
+import 'package:hortifruti/src/pages/perfil/perfil_tab.dart';
 
 class TelaBase extends StatefulWidget {
   TelaBase({super.key});
@@ -32,13 +33,11 @@ class _TelaBaseState extends State<TelaBase> {
         children: [
           //pagina home
           Home(),
-               Carrinho(),
+          Carrinho(),
           Container(
             color: Colors.purple,
           ),
-          Container(
-            color: Colors.amber,
-          ),
+          PerfilTab(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

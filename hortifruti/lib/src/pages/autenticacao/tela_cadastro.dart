@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hortifruti/src/pages/autenticacao/components/customizar_texto_campo.dart';
+import 'package:hortifruti/src/pages/widgets/customizar_texto_campo.dart';
 import 'package:hortifruti/src/config/cor_customizada.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 
